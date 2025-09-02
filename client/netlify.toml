@@ -1,0 +1,10 @@
+echo '[build]' > netlify.toml
+echo '  publish = "dist"' >> netlify.toml
+echo '  command = "npm run build"' >> netlify.toml
+
+echo '[[headers]]' >> netlify.toml
+echo '  for = "/*"' >> netlify.toml
+echo '  [headers.values]' >> netlify.toml
+echo '    X-Frame-Options = "DENY"' >> netlify.toml
+echo '    X-XSS-Protection = "1; mode=block"' >> netlify.toml
+echo '    X-Content-Type-Options = "nosniff"' >> netlify.toml
