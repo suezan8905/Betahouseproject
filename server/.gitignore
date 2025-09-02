@@ -1,0 +1,6 @@
+echo "node_modules/" > server/.gitignore
+echo ".env" >> server/.gitignore
+echo "*.log" >> server/.gitignore
+echo ".DS_Store" >> server/.gitignore
+echo "dist/" >> server/.gitignore
+echo "build/" >> server/.gitignore
