@@ -16,7 +16,7 @@ app.use(
   cors({
     origin: [
       "https://imaginative-beijinho-6e759c.netlify.app", // My deployed frontend
-      "http://localhost:5173", //for  my local development
+      // "http://localhost:5173", //for  my local development (meaning only for laptop, which i removed so it will work)
     ],
     credentials: true,
   })
