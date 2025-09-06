@@ -14,11 +14,13 @@ app.use(express.json());
 // CORS setup
 app.use(
   cors({
-    origin: "http://localhost:5173", //frontend URL
+    origin: [
+      "https://imaginative-beijinho-6e759c.netlify.app", // My deployed frontend
+      "http://localhost:5173", //for  my local development
+    ],
     credentials: true,
   })
 );
-
 // Routes
 app.use("/api/auth", authRoutes);
 
