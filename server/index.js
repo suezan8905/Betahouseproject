@@ -12,12 +12,19 @@ const app = express();
 app.use(express.json());
 
 // CORS setup
+
 app.use(
   cors({
-    origin: [
-      "https://imaginative-beijinho-6e759c.netlify.app", // My deployed frontend
-      // "http://localhost:5173", //for  my local development (meaning only for laptop, which i removed so it will work)
-    ],
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps, Postman)
+      if (!origin) return callback(null, true);
+
+      if (origin === "https://imaginative-beijinho-6e759c.netlify.app") {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
